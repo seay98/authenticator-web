@@ -1,6 +1,8 @@
 const express = require('express')
 const qrcode = require('qrcode')
 
+const { spawnSync } = require('child_process');
+
 const app = express()
 const port = 3000
 
@@ -10,11 +12,11 @@ app.listen(port, () => {
 
 app.get('/', (req, res) => {
     let opts = {
-        margin:0,
+        margin:10,
         errorCorrectionLevel:'M',
         width: 200
     };
-    qrcode.toDataURL('otpauth://totp/test@localhost.localdomain?secret=4CNDIM6OHEUSZTI6BOMMXWJL4A&issuer=localhost.localdomain', opts, (err, src) => {
+    qrcode.toDataURL('otpauth://totp/root@localhost.localdomain?secret=AB7JZJXDW4LS3SEZ5OF5J4TDHM&issuer=localhost.localdomain', opts, (err, src) => {
         if (err) res.send("Error occured");
         res.send(`<!DOCTYPE html>
         <html>

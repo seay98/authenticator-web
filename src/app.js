@@ -1,7 +1,21 @@
 const express = require('express')
 const qrcode = require('qrcode')
 
-const { spawnSync } = require('child_process');
+//const { spawnSync } = require('child_process');
+const csv = require('csv-parser');
+const fs = require('fs');
+const upath = '/home/yh/usertable.csv';
+const users = [];
+
+fs.createReadStream(upath)
+    .pipe(csv())
+    .on('data', (data) => users.push(data))
+    .on('end', () => {
+        console.log(users.find(({username}) => username === 'test2'));
+        if (users.find(({username}) => username === 'test2') === undefined) {
+            console.log('object not found');
+        }
+    });
 
 const app = express()
 const port = 3000
@@ -30,3 +44,5 @@ app.get('/', (req, res) => {
         </html>`);
     });
 })
+
+

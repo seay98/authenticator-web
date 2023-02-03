@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User Info</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="/bootstrap5/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="/bootstrap5/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body class="text-center bg-light">
+    <main class="form-signin">
+        <div class="py-5">
+            <img class="mb-4" src=<%= src %> alt="" width="200" height="200" />
+            <p> <%= key %> </p>
+            <p> This is the original google QRcode <a href=<%= link %> target="_blank">link</a>.</p>
+            <a href="http://localhost:3000">Go Back</a>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -9,19 +9,22 @@
     <script src="/bootstrap5/js/bootstrap.bundle.min.js"></script>
 
   </head>
-  <body class="text-center">
+  <body class="text-center bg-light">
     <main class="form-signin">
       <form method="post" action="/">
         <img class="mb-4" src="/images/boc-logo.png" alt="" width="72" height="70"/>
         <h1 class="h3 mb-3 fw-normal">Authenticator setup</h1>
     
+        <%if (err) {%>
+        <p><font color="#FF0000"><%= err %></font></p>
+        <% } %>
         <div class="form-floating">
-          <input type="text" class="form-control" name="emailaddress" id="emailaddress" placeholder="name@example.com">
+          <input type="text" class="form-control" name="username" id="username" placeholder="name@example.com">
           <label for="floatingInput">User Account</label>
         </div>
         <div class="form-floating">
-          <!-- <input type="password" class="form-control" name="password" id="password" placeholder="Password">
-          <label for="floatingPassword">Password</label> -->
+          <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+          <label for="floatingPassword">Password</label>
         </div>
     
         <div class="checkbox mb-3">

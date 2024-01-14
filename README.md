@@ -1,5 +1,7 @@
 # authenticator-web illustration
 
+Generate QR code for google-authenticator.
+
 =============================================
 Installation
 =============================================
